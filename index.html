@@ -5,14 +5,22 @@
   <script src="main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+
+    .projectinfo {
+      flex: 10%
+    }
+
+    .projectcontainer {
+      margin-top: 50px;
+    }
     .slidecontainer {
+      display: flex;
       height: 70px;
-      width: 100%;
     }
 
     .slider {
+      flex: 90%;
       -webkit-appearance: none;
-      width: 100%;
       height: 10px;
       border-radius: 5px;
       background: #d3d3d3;
@@ -50,9 +58,9 @@
 
 <body>
 
-  <h1>Range Slider Picture</h1>
+  <h1>Project tracking</h1>
 
-  <div id="projects"></div>
+  <div class="projectcontainer" id="projects"></div>
 </body>
 
 </html>

@@ -39,17 +39,18 @@ function populate_projects() {
     const slide_input = document.createElement('input')
     slide_input.className = "slider"
     slide_input.setAttribute('type', 'range')
-    slide_input.setAttribute('min', '1')
+    slide_input.setAttribute('min', '0')
     slide_input.setAttribute('max', '100')
     slide_input.setAttribute('value', project.value)
     slide_input.setAttribute('id', 'slider_'+project.name)
-    const project_info = document.createElement('p')
+    const project_info = document.createElement('div')
+    project_info.className = 'projectinfo'
     project_info.innerHTML = project.name+" progress: "
     const project_progress = document.createElement('span')
     project_progress.setAttribute('id', 'slider_'+project.name)
     project_info.appendChild(project_progress)
-    slidecontainer.appendChild(slide_input)
     slidecontainer.appendChild(project_info)
+    slidecontainer.appendChild(slide_input)
     projects.appendChild(slidecontainer)
 
     // projects.innerHTML += "<div class='slidecontainer'>" +
@@ -62,6 +63,7 @@ function populate_projects() {
 
     slide_input.oninput = function () {
       project_progress.innerHTML = this.value;
+      project.value = this.value;
     }
 
   });
